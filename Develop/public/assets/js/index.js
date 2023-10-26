@@ -31,12 +31,13 @@ const hide = (elem) => {
 
 let activeNote = {};
 // TODO: USE THESE END POINT FOR API
+
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
-    }
+    },
   });
 // TODO:  write route for each req
 
