@@ -28,6 +28,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 
 let activeNote = {};
+
 // TODO: USE THESE END POINT FOR API
 
 const getNotes = () =>
@@ -37,7 +38,7 @@ const getNotes = () =>
       "Content-Type": "application/json",
     },
   });
-// TODO:  write route for each req
+
 
 const saveNote = (note) =>
   fetch("/api/notes", {
@@ -106,6 +107,7 @@ const handleNoteDelete = (e) => {
 
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
+  console.info(" Delete Button Just Got Clicked for" + e)
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute("data-note"));
   renderActiveNote();
@@ -134,6 +136,7 @@ const handleRenderBtns = () => {
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   if (window.location.pathname === "/notes") {
+  
     noteList.forEach((el) => (el.innerHTML = ""));
   }
 
@@ -147,7 +150,9 @@ const renderNoteList = async (notes) => {
     const spanEl = document.createElement("span");
     spanEl.classList.add("list-item-title");
     spanEl.innerText = text;
-    spanEl.addEventListener("click", handleNoteView);
+    spanEl.addEventListener("click", () => {
+
+      handleNoteView });
 
     liEl.append(spanEl);
 

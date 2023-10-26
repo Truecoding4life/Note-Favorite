@@ -8,12 +8,11 @@ const allData = require("./db/db.json");
 router.get("/notes", (req, res) => {
   fs.readFile("./db/db.json", "utf8", (err, data) => {
     if (err) {
-      // console.error(err.status);
+      console.error(err.status + "Bad Request" );
       // return res.status(500).json('Error in posting review');
     } else {
       // Convert string into JSON object
-
-      console.info("New Note is Added to json files");
+      console.info("Note is Displayed on Screen");
       const parsedNotes = JSON.parse(data);
       res.status(200).json(parsedNotes);
     }
@@ -51,4 +50,7 @@ router.post("/notes", (req, res) => {
   }
 });
 
+router.delete('/notes', (req,res) => {
+
+})
 module.exports = router;
