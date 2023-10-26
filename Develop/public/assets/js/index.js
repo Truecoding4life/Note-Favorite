@@ -60,7 +60,6 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
   hide(clearBtn);
-
   if (activeNote.id) {
     show(newNoteBtn);
     noteTitle.setAttribute("readonly", true);
@@ -77,6 +76,7 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
+  console.info("I just got clicked")
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
@@ -193,7 +193,7 @@ const renderNoteList = async (notes) => {
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === "/notes") {
-  saveNoteBtn.addEventListener("click", handleNoteSave);
+  saveNoteBtn.addEventListener("click", handleNoteSave );
   newNoteBtn.addEventListener("click", handleNewNoteView);
   clearBtn.addEventListener("click", renderActiveNote);
   noteForm.addEventListener("input", handleRenderBtns);

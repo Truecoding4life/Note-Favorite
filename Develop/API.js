@@ -2,7 +2,8 @@
 const fs = require("fs");
 const express = require("express");
 const router = express.Router();
-const allData = require("./db/db.json");
+const allData = require("./db");
+const path = require('path');
 
 // GET request for existing notes
 router.get("/notes", (req, res) => {
@@ -15,6 +16,7 @@ router.get("/notes", (req, res) => {
       console.info("Note is Displayed on Screen");
       const parsedNotes = JSON.parse(data);
       res.status(200).json(parsedNotes);
+  
     }
   });
 });
@@ -35,7 +37,7 @@ router.post("/notes", (req, res) => {
         const parsedNotes = JSON.parse(data);
         parsedNotes.push(newNote);
         allData.push(newNote);
-        console.log(newNote + "New Note Added to API list ");
+        console.log(newNote + "New Note Pushed to new Array of Note ");
 
         fs.writeFile(
           "./db/db.json",
@@ -43,7 +45,7 @@ router.post("/notes", (req, res) => {
           (writeErr) =>
             writeErr
               ? console.error(writeErr)
-              : console.info("Successfully updated reviews!")
+              : console.info("Array of New Note Converted to json file")
         );
       }
     });
@@ -51,6 +53,6 @@ router.post("/notes", (req, res) => {
 });
 
 router.delete('/notes', (req,res) => {
-
+    console.info("Received request for" + req);
 })
 module.exports = router;
