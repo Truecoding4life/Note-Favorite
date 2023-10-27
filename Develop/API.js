@@ -28,6 +28,9 @@ router.post("/notes", (req, res) => {
     const newNote = {
       title,
       text,
+      id: Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1),
     };
     // Read the json file and add new comment to that file
     fs.readFile("./db/db.json", "utf8", (error, data) => {
@@ -52,7 +55,24 @@ router.post("/notes", (req, res) => {
   }
 });
 
-router.delete('/notes', (req,res) => {
-    console.info("Received request for" + req);
-})
+router.delete('/notes/:id', (req,res) => {
+    console.info("Received request for" + req.params.id);
+    fs.readFile("./db/db.json", "utf8", (error, data) => {
+      if (error) {
+        console.log(error);
+      } else {
+        const parsedNotes = JSON.parse(data);
+        const result = parsedNotes.filter((coment) => coment.id !== req.params.id);
+        fs.writeFile(
+          "./db/db.json",
+          JSON.stringify(result, null, 4),
+          (writeErr) =>
+            writeErr
+              ? console.error(writeErr)
+              : console.info("Array of New Note Converted to json file")
+        );
+        res.json(result);
+      };
+      });
+      });
 module.exports = router;
