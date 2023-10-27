@@ -2,7 +2,7 @@
 const fs = require("fs");
 const express = require("express");
 const router = express.Router();
-const allData = require("./db");
+
 const path = require('path');
 
 // GET request for existing notes
@@ -36,7 +36,7 @@ router.post("/notes", (req, res) => {
       } else {
         const parsedNotes = JSON.parse(data);
         parsedNotes.push(newNote);
-        allData.push(newNote);
+        res.json(newNote);
         console.log(newNote + "New Note Pushed to new Array of Note ");
 
         fs.writeFile(
