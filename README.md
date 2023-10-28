@@ -1,128 +1,69 @@
-# 11 Express.js: Note Taker
+# NOTE FAVORITE WEBSITE USING EXPRESS JS
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
-## Your Task
+[Go to Note Favorite](https://notefavorite-j-80588266bd0c.herokuapp.com/)
 
-Your assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+[Go to Github Repository](https://github.com/Truecoding4life/Note-Favorite)
 
-The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
+[Check out my other works](https://truecoding4life.github.io/Jaystudio/#contact)
 
-## User Story
 
-```
-AS A small business owner
-I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
-```
+## Description 
 
-## Acceptance Criteria
+Welcome to Note Favorite, the perfect platform for sharing your thoughts and brightening someone's day, all while staying anonymous. Post notes, send a quick 'hi,' or share the joke of the day with friends and strangers alike. Spread positivity, make someone smile, and connect through the power of anonymous notes. Join us at Note Favorite and start sharing your favorite notes today!
 
-```
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a "Save Note" button and a "Clear Form" button appear in the navigation at the top of the page
-WHEN I click on the Save button
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes and the buttons in the navigation disappear
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column and a "New Note" button appears in the navigation
-WHEN I click on the "New Note" button in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column and the button disappears
-```
 
-## Mock-Up
+## Table of Contents
 
-The following GIF shows the web application's appearance and functionality:
+* [Installation](#installation)
+* [Usage](#usage)
+* [User Interface]()
 
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo.gif)
 
-## Getting Started
+## User Interface
 
-On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module.
+Once you are at the homepage click get start to begin sending notes
+![Welcome page](./public/assets/css/index.png)
 
-The following HTML routes should be created:
+This Website is straightforward and simple to use, all the tools you'd need is in the left hand side that allow you to post and clear current note.
+![Note Page](./public/assets/css/notes.png)
 
-* `GET /notes` should return the `notes.html` file.
 
-* `GET *` should return the `index.html` file.
 
-The following API routes should be created:
+## Installation 
 
-* `GET /api/notes` should read the `db.json` file and return all saved notes as JSON.
+Installing Note Favorite is a breeze, and you'll be up and running in no time. Follow these steps to get started:
 
-* `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
+1.  Open your web browser and navigate to [Website URL] (replace with the actual URL of your website).
 
-## Bonus
+2. When you first arrive on the website, you'll have to click on "Create Note" to begin crafting your anonymous message. You can add text.
 
-You haven’t learned how to handle DELETE requests, but this application offers that functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
+3. Once your note is created, you can share it with friends or the public. You can also explore other notes on the platform, like, share, and connect with users.
 
-* `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 
-## Grading Requirements
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
 
-This Challenge is graded based on the following criteria:
+## Usage
 
-### Technical Acceptance Criteria: 40%
+1. **Create a Note:** Click on the "Create Note" button to start crafting your anonymous message. Share a kind thought, a quick hello, or even the joke of the day.
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+2. **Customize Your Note:** Personalize your message with fonts, colors, and styles. Make it uniquely yours!
 
-  * Application front end must connect to an Express.js back end.
+3. **Go Public:** Share it with the world.
 
-  * Application back end must store notes that have a unique id in a JSON file.
+4. **Stay Anonymous:** Rest assured, your identity remains a secret. We value your privacy.
 
-  * Application must be deployed to Heroku.
+5. **Discover Notes:** Browse through a feed of heartwarming, funny, and intriguing notes from other users. Make someone's day by liking or 6.sharing their note.
 
-### Deployment: 36%
+6. **Spread Positivity:** Let Note Favorite be your canvas for positivity and connection. Share a smile, make a friend, and brighten someone's day, one note at a time.
 
-* Application deployed at live URL.
+7. **Connect with Friends:** Use Note Favorite to send anonymous messages to friends and keep the fun and surprises going.
 
-* Application loads with no errors.
+---
+*This README was generated based on the Good README Guide*
 
-* Application GitHub URL submitted.
+ 
 
-* GitHub repository contains application code.
+Make Your Website Everyday Better.
 
-### Application Quality: 11%
-
-* Application console is free of errors.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Bonus: +10 Points
-
-Fulfilling the following can add up to 10 points to your grade. Note that the highest grade you can achieve is still 100:
-
-* Application allows users to delete notes.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© Jay's Studio 2023.
