@@ -13,7 +13,7 @@ router.get("/notes", (req, res) => {
       // return res.status(500).json('Error in posting review');
     } else {
       // Convert string into JSON object
-      console.info("Note is Displayed on Screen");
+      console.info("GET request to Display Existing Note WORKING");
       const parsedNotes = JSON.parse(data);
       res.status(200).json(parsedNotes);
   
@@ -40,7 +40,7 @@ router.post("/notes", (req, res) => {
         const parsedNotes = JSON.parse(data);
         parsedNotes.push(newNote);
         res.json(newNote);
-        console.log(newNote + "New Note Pushed to new Array of Note ");
+        console.log("POST REQUEST for new comment");
 
         fs.writeFile(
           "./db/db.json",
